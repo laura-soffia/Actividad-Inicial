@@ -1,9 +1,387 @@
-:root{
-    --blanco: #d6efd8;
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #9cbed1;
+    --gris: #757575;
+    --grisclaro: #dfe9f3;
+
+    /* --blanco: #d6efd8;
     --oscuro: #1a5319;
     --primario: #508d4e;
     --secundario: #80af81;
-    --gris: #757575;
+    --gris: #757575; */
 
     --fuente-principal: 3.8rem;
+}
+
+/*Globales*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /*Box Zising*/
+}
+
+
+/*A todos los elementos del css aplique el box sizing y haga el calculo interno*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /*1rem=10px*/
+    /**/
+    font-family: "Krub", sans-serif;
+    /**/
+    background-image: linear-gradient(to top, var(--grisclaro)0%, var(--blanco)100%);
+}
+
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.sombra {
+    box-shadow: 9px 9px 16px -2px rgba(0, 0, 0, 0.74);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* .servicios {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+} */
+
+
+@media(min-width: 768px) {
+    .Servicios {
+    display: grid;
+    /* grid-template-columns: 300px 300px;
+    grid-template-rows: 300px 800px; 
+    grid: 200px 800px / 300px 300px;*/
+
+    /*Estas son diferentes fromas de seccionar la pagina en columnas con grid.
+     grid-template-columns: 33.3% 33.3% 33.3%; 
+     Esta forma es para hacerlo con fracciones*/
+
+    /* grid-template-columns: 1fr 1fr 1fr; 
+    Esta es la manera más corta :)*/
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Tipografia*/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+/*Titulos*/
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    /* color: var(--oscuro); */
+}
+
+/* h2.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    color: var(--oscuro);
+} */
+
+/* h1{
+    text-align: center;
+    font-size: 3.8rem;
+    color: #3e5783;
+}*/
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.boton {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.5rem 3rem;
+    /* display: block; */
+    text-align: center;
+    background-color: var(--secundario);
+    border-radius: 7%;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    /* width: 90%; */
+}
+
+@media(min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+/*Navegación principal*/
+
+/* utility class */
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column;
+    align-items: start; */
+}
+
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+}
+
+/*:hover es seudoclase, existe pero existe
+Se utiliza para mostrar cierto tipo de información, como un banner que hay que cerrar*/
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*Los estándares de MQ vienen siendo:480px para celulares, 768px para tablets, 1140px para laptops o 14040 o 1400 para pantallas más grandes*/
+@media(min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .boton {
+        padding: 1rem;
+        width: auto;
+    }
+}
+
+/*Mediaquery para celulares*/
+/* @media(min-width: 480px){
+    body{
+        background-color: var(--gris);
+    }
+} */
+
+/*Mediaquery para tablets*/
+/* @media(min-width: 768px){
+    body{
+        background-color: var(--gris);
+    }
+} */
+
+
+/*Hero*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 450px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 2rem;
+
+}
+
+/*Esto hace que se le aplique opasidad a la imagen y que se aplique corectamente a toda la imagen*/
+.contenido-hero {
+    position: absolute;
+
+    /**/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* align-items: baseline; */
+
+    /* background-color: rgb(0 0 0 .5); */
+    background-color: rgba(0 0 0 / 40%);
+    /* width: 100%;
+    height: 100%; */
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+
+}
+
+.icono-ubicacion {
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+/* body {
+
+  background: #d6f1ff;
+background: linear-gradient( to top, rgba(214, 241, 255, 1) 28%, rgba(163, 255, 221, 1) 100%);
+
+} */
+
+/* .caja-contenedor {
+    width: 60%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: azure;
+    border: .3rem solid #48a3b3af;
+    border-radius: 1.5rem;
+} */
+
+.Servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.Servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.Servicio .iconos{
+    background-color: rgb(183, 241, 222);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.formulario{
+    background-color: #d2dde7;
+    max-width: 60rem;
+    margin: 0rem auto;
+    padding: 3rem;
+    border: .1rem #71c9d3;
+    border-radius: 1.5rem;
+    text-align: center;
+}
+
+
+
+.formulario fieldset {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    grid-column: 1 / -1;
+}
+
+@media(min-width:768px ) {
+    .formulario fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; 
+    }
+}
+
+.campo-ancho {
+    grid-column: 1 / -1;
+
+}
+
+.campo-ancho textarea{
+    padding: 12px;
+    min-height: 2.3rem;
+}
+
+.boton-enviar {
+    justify-self: end;
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+}
+
+.encabezado {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    width: 100%;
+    font-weight: bold;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.datos input,
+.datos textarea {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.datos label{
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+.borde {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+footer{
+    text-align: center;
+    font-weight: bold;
+
 }
