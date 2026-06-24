@@ -205,7 +205,7 @@ Se utiliza para mostrar cierto tipo de información, como un banner que hay que 
 
 /*Hero*/
 .hero {
-    background-image: url(../img/hero.jpg);
+    background-image: url(hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
